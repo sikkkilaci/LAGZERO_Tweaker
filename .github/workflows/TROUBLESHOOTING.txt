@@ -1,0 +1,175 @@
+LAG|ZERØ TWEAKER - TROUBLESHOOTING
+==================================
+
+PROBLEM: "py --version" not recognized
+--------------------------------------------
+SOLUTION:
+1. Python is not installed OR not in PATH
+2. Download Python from https://www.python.org
+3. Run the installer and ENABLE: "Add Python to PATH"
+4. Restart your computer
+5. Open Command Prompt (Win+R -> cmd -> OK)
+6. Type: python --version
+7. Should show "Python 3.x.x"
+8. Try the build again
+
+---
+
+PROBLEM: "pip install" fails / connection error
+--------------------------------------------
+SOLUTION:
+1. Check your internet connection
+2. Check if your firewall blocks pypi.org:
+   - Windows Defender -> Firewall & network protection
+   - Allow "Python" through the firewall
+3. Try running Command Prompt as Administrator:
+   - Right-click Command Prompt -> "Run as administrator"
+   - Then run BUILD_EXE.bat again
+4. If still fails, try the Python variant instead:
+   - Right-click build_exe.py -> Open with Python
+
+---
+
+PROBLEM: PyInstaller fails / build error
+--------------------------------------------
+SOLUTION:
+1. Make sure you're in the correct directory:
+   - The folder should contain: lagzero_tweaker.py, requirements.txt, BUILD_EXE.bat
+2. Try the Python version instead:
+   - python build_exe.py
+3. If that also fails:
+   - Delete the "build" and "dist" folders
+   - Delete any "*.spec" files
+   - Try again
+
+---
+
+PROBLEM: BUILD_EXE.bat doesn't run
+--------------------------------------------
+SOLUTION:
+1. Try double-clicking: build_exe.py (Python version)
+2. Or open Command Prompt in this folder:
+   - Shift+Right-click in empty space -> "Open PowerShell window here"
+   - Type: python build_exe.py
+3. Or run as Administrator:
+   - Right-click BUILD_EXE.bat -> "Run as administrator"
+
+---
+
+PROBLEM: "permission denied" or "access is denied"
+--------------------------------------------
+SOLUTION:
+1. Close any antivirus temporarily
+2. Disable Windows Defender temporarily:
+   - Windows Defender -> Virus & threat protection
+   - Manage settings -> OFF (turn it back on after build!)
+3. Run as Administrator:
+   - Right-click BUILD_EXE.bat -> "Run as administrator"
+4. Use the Python version:
+   - python build_exe.py
+
+---
+
+PROBLEM: Build takes very long or hangs
+--------------------------------------------
+SOLUTION:
+1. This is normal (PyInstaller can take 30-120 seconds)
+2. Just wait - don't close the window
+3. If it's been >5 minutes:
+   - Close the window
+   - Restart Command Prompt
+   - Try again (but give it more time this time)
+
+---
+
+PROBLEM: LAGZERO_Tweaker.exe is not created
+--------------------------------------------
+SOLUTION:
+1. Check if the build actually succeeded
+   - Look for "BUILD SUCCESS" message
+2. If not successful:
+   - Read the error message carefully
+   - Search for a matching problem above
+3. Try the Python variant: python build_exe.py
+4. If still fails:
+   - Post the error message in an issue
+
+---
+
+PROBLEM: LAGZERO_Tweaker.exe created but won't start
+--------------------------------------------
+SOLUTION:
+1. Right-click LAGZERO_Tweaker.exe -> Properties
+   - Check if it's blocked:
+     - If "blocked" checkbox is shown -> Uncheck it -> Apply
+2. Try running as Administrator:
+   - Right-click -> "Run as administrator"
+3. Windows Defender might block it (false positive):
+   - Windows Defender -> Virus & threat protection
+   - Allowed apps -> "Allow an app through" -> Add LAGZERO_Tweaker.exe
+
+---
+
+PROBLEM: LAGZERO_Tweaker.exe starts but crashes immediately
+--------------------------------------------
+SOLUTION:
+1. Run from Command Prompt to see error messages:
+   - Open Command Prompt in the folder
+   - Type: LAGZERO_Tweaker.exe
+   - Look at the error output
+2. Most common: Python runtime issue
+   - Try rebuilding with: python build_exe.py
+3. Administrator rights required:
+   - Try: Right-click -> "Run as administrator"
+
+---
+
+PROBLEM: Registry changes don't apply
+--------------------------------------------
+SOLUTION:
+1. Administrator rights required!
+   - Windows should ask for permission (UAC dialog)
+   - Click "Yes" to allow
+2. Try again and look for the confirmation dialog
+3. If no dialog appears:
+   - Run as Administrator:
+     Right-click LAGZERO_Tweaker.exe -> "Run as administrator"
+
+---
+
+PROBLEM: "gamepadla-plus installation failed" in the running app
+--------------------------------------------
+SOLUTION:
+1. This happens only on first "Latency Test"
+2. Python must be installed (for pip)
+3. Internet connection required
+4. Manually install it:
+   - Open Command Prompt
+   - Type: pip install gamepadla-plus
+   - Try the test again
+5. If still fails:
+   - Gamepad test is optional - skip it for now
+
+---
+
+GETTING HELP
+==============
+1. Read this file first
+2. Check the GitHub issues:
+   - Search for your error message
+   - Look at closed issues too
+3. If not found:
+   - Post a new issue with:
+     - Your Python version
+     - Your Windows version
+     - The exact error message
+     - Steps to reproduce
+
+---
+
+OTHER RESOURCES
+================
+- Python: https://www.python.org/downloads/
+- PyInstaller: https://pyinstaller.org/
+- Windows Firewall: https://support.microsoft.com/en-us/windows/defender-firewall
+- UAC (User Account Control): https://support.microsoft.com/en-us/windows/control-user-account-control

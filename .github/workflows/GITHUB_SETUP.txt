@@ -1,0 +1,125 @@
+╔════════════════════════════════════════════════════════════════╗
+║         LAGZERO_TWEAKER - GITHUB SETUP ANLEITUNG              ║
+╚════════════════════════════════════════════════════════════════╝
+
+SCHRITT 1: WORKFLOW-DATEI HOCHLADEN
+═══════════════════════════════════════════════════════════════
+
+1. Öffne dein Repo: https://github.com/sikklaud/LAGZERO_Tweaker
+
+2. Klick auf "Add file" → "Create new file"
+
+3. Gib den Pfad ein:
+   .github/workflows/build.yml
+
+4. Kopiere den KOMPLETTEN Inhalt von "build.yml" (die Datei die ich dir gab)
+
+5. Paste es rein
+
+6. Klick "Commit new file" (grüner Button unten)
+
+---
+
+SCHRITT 2: LAGZERO DATEIEN HOCHLADEN
+═══════════════════════════════════════════════════════════════
+
+Jetzt musst du den Ordner "LAGZERO_Tweaker" hochladen.
+
+OPTION A (einfach, im Browser):
+1. Klick auf "Add file" → "Upload files"
+2. Wähle ALLE Dateien aus:
+   - lagzero_tweaker.py
+   - requirements.txt
+   - BUILD.bat
+   - build_exe.py
+   - README.md
+   - INSTALLATION_GUIDE.md
+   - TROUBLESHOOTING.txt
+   - START_AS_ADMIN.bat
+   (alles was im LAGZERO_Tweaker Ordner ist)
+
+3. Klick "Commit changes"
+
+OPTION B (Git Kommandozeile, wenn du Git installiert hast):
+git clone https://github.com/sikklaud/LAGZERO_Tweaker.git
+cd LAGZERO_Tweaker
+cp /Pfad/zu/deinen/Dateien/* .
+git add .
+git commit -m "Initial commit - add LAG|ZERØ Tweaker source"
+git push
+
+---
+
+SCHRITT 3: AUTOMATIC BUILD TESTEN
+═══════════════════════════════════════════════════════════════
+
+1. Nach dem Upload schaut GitHub automatisch, ob eine build.yml existiert
+2. Gehe zu "Actions" Tab in deinem Repo
+3. Du siehst einen "Build LAGZERO_Tweaker EXE" Workflow
+4. Er sollte gerade laufen (orange Symbol = lädt)
+5. Warte bis er fertig ist (grünes Häkchen = Erfolg)
+
+---
+
+SCHRITT 4: EXE HERUNTERLADEN
+═══════════════════════════════════════════════════════════════
+
+Wenn der Build erfolgreich ist (grüner Haken):
+
+1. Gehe zum letzten Workflow-Run
+2. Unten siehst du "Artifacts"
+3. Klick auf "LAGZERO_Tweaker"
+4. Die EXE wird heruntergeladen!
+
+---
+
+SCHRITT 5: RELEASES ERSTELLEN (optional)
+═══════════════════════════════════════════════════════════════
+
+Wenn du eine stabile Version releasen willst:
+
+1. Gehe zu "Releases" im Repo
+2. Klick "Create a new release"
+3. Tag: v0.3.0 (oder deine Version)
+4. Title: LAG|ZERØ Tweaker v0.3.0 BETA
+5. Description: Schreib was neu ist
+6. Klick "Publish release"
+
+Der Workflow wird automatisch:
+- Die EXE bauen
+- Sie an den Release anhängen
+- Download-Link bereitstellen!
+
+---
+
+VON JETZT AN:
+═══════════════════════════════════════════════════════════════
+
+Jedes Mal wenn du:
+- Code hochlädst (push)
+- Einen Release erstellst (tag)
+
+... wird automatisch:
+1. Windows-Server startet
+2. Baut die EXE
+3. Macht sie downloadbar
+
+Fertig! Keine lokale Komplizierung mehr! 🚀
+
+---
+
+TROUBLESHOOTING:
+
+Build schlägt fehl?
+→ Gehe zu "Actions" Tab
+→ Klick auf den roten Build
+→ Lies die Fehlermeldung
+→ Normalerweise ist es ein fehlender Import oder so
+
+Du brauchst Hilfe?
+→ Erstell ein Issue im Repo
+→ Ich (Claude) kann da nicht direkt helfen, aber du kannst dich an die GitHub Community wenden
+
+---
+
+Das wars! Jetzt haben Sie ein professionelles Setup! 🎉
